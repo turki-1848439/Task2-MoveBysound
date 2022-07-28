@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -95.03, "left": 50.82, "attrs": {} },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "stepper1",
+      "top": -275.64,
+      "left": -239.19,
+      "attrs": { "display": "none", "arrow": "yellow" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "stepper1:B+", "esp:D33", "green", [ "v0" ] ],
+    [ "stepper1:A+", "esp:D25", "green", [ "v0" ] ],
+    [ "stepper1:A-", "esp:D26", "green", [ "v0" ] ],
+    [ "stepper1:B-", "esp:D32", "green", [ "v15.64", "h165.32" ] ]
+  ]
+}
